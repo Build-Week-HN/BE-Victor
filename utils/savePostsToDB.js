@@ -9,10 +9,10 @@ const savePosts = async () => {
       'https://hacker-news.firebaseio.com/v0/topstories.json'
     );
     let data = res.data;
-    data.splice(20);
+    const postsToSave = data.splice(20);
     await db('posts').truncate();
     await db('comments').truncate();
-    data.forEach(async post => {
+    postsToSave.forEach(async post => {
       try {
         const details = await axios.get(
           `https://hacker-news.firebaseio.com/v0/item/${post}.json`
