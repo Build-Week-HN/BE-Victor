@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('posts', posts => {
-      posts.integer('id');
+      posts.integer('id').unique();
       posts.integer('comment_count');
       posts.string('author', 255);
       posts.integer('score');
@@ -10,11 +10,8 @@ exports.up = function(knex) {
       posts.string('url', 255);
     })
     .createTable('comments', comments => {
-      comments.integer('id');
-      comments
-        .integer('post_id')
-        .references('id')
-        .inTable('posts');
+      comments.integer('id').unique();
+      comments.integer('post_id');
       comments.string('text', 5000);
       comments.string('author', 255);
       comments.integer('time');
@@ -26,17 +23,9 @@ exports.up = function(knex) {
       users.string('password', 255);
     })
     .createTable('bookmarks', bookmarks => {
-      bookmarks
-        .integer('user_id')
-        .notNullable()
-        .references('id')
-        .inTable('users');
+      bookmarks.integer('user_id');
 
-      bookmarks
-        .integer('post_id')
-        .notNullable()
-        .references('id')
-        .inTable('posts');
+      bookmarks.integer('post_id');
     });
 };
 
