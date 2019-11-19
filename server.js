@@ -18,7 +18,10 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'Endpoints Documentation'
   },
-  host: process.env.URL,
+  host:
+    process.env.NODE_ENV === 'production'
+      ? 'https://bw-hackernews.herokuapp.com'
+      : `localhost:${process.env.PORT || 3333}`,
   basePath: '/'
 };
 
