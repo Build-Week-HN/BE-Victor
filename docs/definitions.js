@@ -10,20 +10,28 @@
  *    properties:
  *      id:
  *         type: integer
+ *         description: ID of post
  *      comment_count:
  *         type: integer
+ *         description: Number of comments the post has
  *      author:
  *         type: string
+ *         description: Autor of the post
  *      score:
  *         type: integer
+ *         description: Number of upvotes the post has
  *      time:
  *         type: integer
+ *         description: The time the comment was posted
  *      title:
  *         type: string
+ *         description: The title of the post
  *      url:
  *         type: string
+ *         description: The external URL the post links to
  *      comments:
  *         type: array
+ *         description: Array of comments on the post
  *         items:
  *             $ref: '#/definitions/Comment'
  *
