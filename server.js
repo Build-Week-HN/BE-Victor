@@ -20,7 +20,7 @@ const swaggerDefinition = {
   },
   host:
     process.env.NODE_ENV === 'production'
-      ? 'https://bw-hackernews.herokuapp.com'
+      ? 'bw-hackernews.herokuapp.com'
       : `localhost:${process.env.PORT || 3333}`,
   basePath: '/'
 };
