@@ -1,7 +1,7 @@
 const db = require('../data/dbConfig');
 
 exports.addPost = post => {
-  return db('posts').insert(post);
+  return db('posts').insert(post, 'id');
 };
 
 exports.getAllPosts = () => {

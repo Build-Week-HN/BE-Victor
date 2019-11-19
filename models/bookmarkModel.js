@@ -1,7 +1,7 @@
 const db = require('../data/dbConfig');
 
 exports.addBookmark = bookmark => {
-  return db('bookmarks').insert(bookmark);
+  return db('bookmarks').insert(bookmark, 'id');
 };
 
 exports.getBookMarkById = userId => {
