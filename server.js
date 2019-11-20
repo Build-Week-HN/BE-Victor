@@ -9,6 +9,7 @@ const swaggerUi = require('swagger-ui-express');
 const postRouter = require('./routes/postRoute');
 const userRouter = require('./routes/userRoute');
 const bookmarkRouter = require('./routes/bookmarkRoute');
+const communityRouter = require('./routes/communityRoute');
 
 require('./utils/cronJob');
 const server = express();
@@ -32,6 +33,7 @@ const options = {
 };
 
 const swaggerSpec = swaggerJSDoc(options);
+
 server.get('/swagger.json', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.send(swaggerSpec);
@@ -49,5 +51,6 @@ server.get('/', (req, res) => {
 server.use(postRouter);
 server.use(userRouter);
 server.use(bookmarkRouter);
+server.use(communityRouter);
 
 module.exports = server;

@@ -52,6 +52,33 @@
  *        description: The author of the comment.
  *      time:
  *         type: integer
- *         description: Time the comment was posted
+ *         description: Time the comment was posted.
  *
+ * Community:
+ *    type: object
+ *    properties:
+ *      id:
+ *        type: integer
+ *        description: The post ID.
+ *      author:
+ *        type: integer
+ *        description: The author of the post.
+ *      text:
+ *        type: string
+ *        description: The body of the post.
+ *      title:
+ *        type: string
+ *        description: The title of the post.
+ *      date:
+ *        type: string
+ *        description: Date the comment was posted.
+ *      like_count:
+ *        type: integer
+ *        description: Number of likes.
+ *      love_count:
+ *        type: integer
+ *        description: Number of loves.
+ *      hate_count:
+ *        type: integer
+ *        description: Number of hates.
  */

@@ -26,6 +26,18 @@ exports.up = function(knex) {
       bookmarks.integer('user_id');
 
       bookmarks.integer('post_id');
+    })
+    .createTable('community_posts', table => {
+      table.increments();
+
+      table.string('date', 255);
+      table.string('title', 255);
+      table.string('author', 255);
+      table.string('text', 3000);
+
+      table.integer('like_count');
+      table.integer('love_count');
+      table.integer('hate_count');
     });
 };
 
@@ -33,5 +45,6 @@ exports.down = function(knex) {
   return knex.schema
     .dropTableIfExists('comments')
     .dropTableIfExists('posts')
-    .dropTableIfExists('users');
+    .dropTableIfExists('users')
+    .dropTableIfExists('commmunity_posts');
 };

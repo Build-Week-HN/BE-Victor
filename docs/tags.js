@@ -10,4 +10,6 @@
  *    description:
  *  - name: Bookmarks
  *    description:
+ *  - name: Community
+ *    description:
  */
